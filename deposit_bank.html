@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <meta charset="utf-8" />
+  <title>Scale | Web Application</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/icon.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />  
+    <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+<body class="">
+  <section class="vbox">
+    <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
+      <div class="navbar-header aside-md dk">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="index.html" class="navbar-brand">
+          <img src="images/logo.png" class="m-r-sm" alt="scale">
+          <span class="hidden-nav-xs"></span>
+        </a>
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+          <i class="fa fa-cog"></i>
+        </a>
+      </div>
+      <ul class="nav navbar-nav hidden-xs">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="i i-grid"></i>
+          </a>
+          <section class="dropdown-menu aside-lg bg-white on animated fadeInLeft">
+            <div class="row m-l-none m-r-none m-t m-b text-center">
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-mail i-2x text-primary-lt"></i>
+                    </span>
+                    <small class="text-muted">Mailbox</small>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-calendar i-2x text-danger-lt"></i>
+                    </span>
+                    <small class="text-muted">Calendar</small>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-map i-2x text-success-lt"></i>
+                    </span>
+                    <small class="text-muted">Map</small>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-paperplane i-2x text-info-lt"></i>
+                    </span>
+                    <small class="text-muted">Trainning</small>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-images i-2x text-muted"></i>
+                    </span>
+                    <small class="text-muted">Photos</small>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-clock i-2x text-warning-lter"></i>
+                    </span>
+                    <small class="text-muted">Timeline</small>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-sm bg-white b-white btn-icon"><i class="fa fa-search"></i></button>
+            </span>
+            <input type="text" class="form-control input-sm no-border" placeholder="Search apps, projects...">            
+          </div>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
+        <li class="hidden-xs">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="i i-chat3"></i>
+            <span class="badge badge-sm up bg-danger count">2</span>
+          </a>
+          <section class="dropdown-menu aside-xl animated flipInY">
+            <section class="panel bg-white">
+              <div class="panel-heading b-light bg-light">
+                <strong>You have <span class="count">2</span> notifications</strong>
+              </div>
+              <div class="list-group list-group-alt">
+                <a href="#" class="media list-group-item">
+                  <span class="pull-left thumb-sm">
+                    <img src="images/a0.png" alt="..." class="img-circle">
+                  </span>
+                  <span class="media-body block m-b-none">
+                    Use awesome animate.css<br>
+                    <small class="text-muted">10 minutes ago</small>
+                  </span>
+                </a>
+                <a href="#" class="media list-group-item">
+                  <span class="media-body block m-b-none">
+                    1.0 initial released<br>
+                    <small class="text-muted">1 hour ago</small>
+                  </span>
+                </a>
+              </div>
+              <div class="panel-footer text-sm">
+                <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+              </div>
+            </section>
+          </section>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="thumb-sm avatar pull-left">
+              <img src="images/a0.png" alt="...">
+            </span>
+            Ahmed.Kamali <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight">            
+            <li>
+              <span class="arrow top"></span>
+              <a href="#">Settings</a>
+            </li>
+            <li>
+              <a href="profile.html">Profile</a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="badge bg-danger pull-right">3</span>
+                Notifications
+              </a>
+            </li>
+            <li>
+              <a href="docs.html">Help</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>      
+    </header>
+    <section>
+      <section class="hbox stretch">
+            <!-- .aside -->
+		   <script src="./js/w3.js"></script>
+<aside class="bg-black aside-md hidden-print" id="nav">          
+<section class="vbox">
+<aside w3-include-html="included_side.html">
+<script>
+w3.includeHTML();
+</script>
+</section>
+</aside>
+	  <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable padder">
+              <div class="m-b-md">
+                <h3 class="m-b-none">International bank transfer deposits</h3>
+              </div>
+               <div class="row">
+                     <div class="col-sm-11">             
+				<section class="panel panel-default">
+
+               <table class="table responsive rt" id="rt1">
+				<tbody><tr>
+					<td width="30%"><b>Account owner:</b></td>
+					<td><b>Wafacash Ltd</b></td>
+				</tr>
+				<tr>
+					<td>Address:</td>
+					<td><b>5 New Street Square</b></td>
+				</tr>
+				<tr>
+					<td>City:</td>
+					<td><b>Casablanca EC4A 3TW</b></td>
+				</tr>
+				<tr>
+					<td>Country:</td>
+					<td><b>Morocco</b></td>
+				</tr>
+				<tr>
+					<td>Account number:</td>
+					<td><b>07000-0002199468</b></td>
+				</tr>
+				<tr>
+					<td>IBAN:</td>
+					<td><b>SI56070000002199468</b></td>
+				</tr>
+				<tr>
+					<td width="30%">Message:</td>
+					<td><b>918456486893</b></td>
+				</tr>
+				<tr>
+					<td colspan="2"><strong class="red">IMPORTANT:</strong> you MUST include the above message number in
+						the bank deposit message in order to credit YOUR Bitstamp account
+					</td>
+				</tr>
+			</tbody></table> </div>
+				
+				
+				
+              	  <div class="col-sm-11">
+              
+   <section class="panel panel-default">
+                <header class="panel-heading">
+                  Responsive Table
+                </header>
+                <div class="row wrapper">
+                  <div class="col-sm-5 m-b-xs">
+                    <select class="input-sm form-control input-s-sm inline v-middle">
+                      <option value="0">Bulk action</option>
+                      <option value="1">Delete selected</option>
+                      <option value="2">Bulk edit</option>
+                      <option value="3">Export</option>
+                    </select>
+                    <button class="btn btn-sm btn-default">Apply</button>                
+                  </div>
+                  <div class="col-sm-4 m-b-xs">
+                    <div class="btn-group" data-toggle="buttons">
+                      <label class="btn btn-sm btn-default active">
+                        <input type="radio" name="options" id="option1"> Day
+                      </label>
+                      <label class="btn btn-sm btn-default">
+                        <input type="radio" name="options" id="option2"> Week
+                      </label>
+                      <label class="btn btn-sm btn-default">
+                        <input type="radio" name="options" id="option2"> Month
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="input-group">
+                      <input type="text" class="input-sm form-control" placeholder="Search">
+                      <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button">Go!</button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table class="table table-striped b-t b-light">
+                    <thead>
+                      <tr>
+                        <th width="20"><label class="checkbox m-n i-checks"><input type="checkbox"><i></i></label></th>
+                        <th class="th-sortable" data-toggle="class">Operation
+                          <span class="th-sort">
+                            <i class="fa fa-sort-down text"></i>
+                            <i class="fa fa-sort-up text-active"></i>
+                            <i class="fa fa-sort"></i>
+                          </span>
+                        </th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th width="30">Deposit from banque A</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><label class="checkbox m-n i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
+                        <td>Deposit from banque B</td>
+                        <td>400</td>
+                        <td>Jul 25, 2017</td>
+                        <td>
+                          <a href="#" class="active" data-toggle="class"><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label class="checkbox m-n i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
+                        <td>Deposit from banque A</td>
+                        <td>800</td>
+                        <td>Jul 22, 2017</td>
+                        <td>
+                          <a href="#" data-toggle="class"><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label class="checkbox m-n i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
+                        <td>Deposit from banque A</td>
+                        <td>150</td>
+                        <td>Jul 15, 2017</td>
+                        <td>
+                          <a href="#" class="active" data-toggle="class"><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label class="checkbox m-n i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
+                        <td>Deposit from banque C</td>
+                        <td>407</td>
+                        <td>Jul 11, 2017</td>
+                        <td>
+                          <a href="#" class="active" data-toggle="class"><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label class="checkbox m-n i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
+                        <td>Deposit from banque D</td>
+                        <td>400</td>
+                        <td>Jul 7, 2017</td>
+                        <td>
+                          <a href="#" class="active" data-toggle="class"><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label class="checkbox m-n i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
+                        <td>Deposit from banque A</td>
+                        <td>877</td>
+                        <td>Jul 3, 2017</td>
+                        <td>
+                          <a href="#" class="active" data-toggle="class"><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label class="checkbox m-n i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
+                        <td>Deposit from banque A </b></td>
+                        <td>1555</td>
+                        <td>Jul 2, 2017</td>
+                        <td>
+                          <a href="#" class="active" data-toggle="class"><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label class="checkbox m-n i-checks"><input type="checkbox" name="post[]"><i></i></label></td>
+                        <td>Deposit from banque A</td>
+                        <td>478</td>
+                        <td>Jul 1, 2017</td>
+                        <td>
+                          <a href="#" class="active" data-toggle="class"><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <footer class="panel-footer">
+                  <div class="row">
+                    <div class="col-sm-4 hidden-xs">
+                      <select class="input-sm form-control input-s-sm inline v-middle">
+                        <option value="0">Bulk action</option>
+                        <option value="1">Delete selected</option>
+                        <option value="2">Bulk edit</option>
+                        <option value="3">Export</option>
+                      </select>
+                      <button class="btn btn-sm btn-default">Apply</button>                  
+                    </div>
+                    <div class="col-sm-4 text-center">
+                      <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+                    </div>
+                    <div class="col-sm-4 text-right text-center-xs">                
+                      <ul class="pagination pagination-sm m-t-none m-b-none">
+                        <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </footer>
+              </section>
+			  </div>
+              </div> 
+                      
+            </section>
+            </section>
+			
+			
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+        </section>
+      </section>
+    </section>
+  </section>
+  <script src="js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>  
+  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="js/parsley/parsley.min.js"></script>
+<script src="js/wizard/jquery.bootstrap.wizard.js"></script>
+<script src="js/wizard/demo.js"></script>
+  <script src="js/app.plugin.js"></script>
+</body>
+</html>

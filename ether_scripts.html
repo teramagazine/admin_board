@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <meta charset="utf-8" />
+  <title>Wafacash | Wallet</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/icon.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />  
+  <link rel="stylesheet" href="js/calendar/bootstrap_calendar.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+  <![endif]-->
+       <script type="text/javascript" src="./Web3/web3.js"></script> 
+
+</head>
+<body class="">
+<script type="text/javascript">
+
+  /* if (typeof web3 !== 'undefined') {
+    // Use Mist/MetaMask's provider
+    window.web3 = new Web3(web3.currentProvider);
+	console.log("1");
+	
+  } else {
+    console.log('No web3? You should consider trying MetaMask!')
+    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+    window.web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/esamuIL4MaKepy64zcLj"));
+		console.log("2");
+
+  }*/
+
+var web3 = new Web3();
+ //  web3 = new Web3(new Web3.providers.HttpProvider("http://rpc.ethapi.org:8545"));
+web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v2QCDR7v7cgH6fy0y171"));
+ 
+
+	</script >
+ 
+      <section class="hbox stretch">
+ 
+        <section id="content">
+          <section class="hbox stretch">
+            <section>
+              <section class="vbox">
+                <section class="scrollable padder">              
+       .
+                  <div class="row">
+                    <div class="col-sm-11">
+                      <div class="panel b-a">
+                        <div class="row m-n">
+                
+                         
+				 
+          
+<script type="text/javascript">
+   function get_address(){
+   web3.eth.getAccounts(function(error, result){
+    if(!error)
+{
+user=result;  }
+    else
+user=0x1;
+});
+ 
+ }
+
+   // web3.setProvider(new web3.providers.HttpProvider('http://api.myetherapi.com/rop'));
+   
+    var v=web3.eth.getBalance("0xFed55B453dBb0589ec5433a9318C09f1766D7dAb").toString();
+	//00c5496aee77c1ba1f0854206a26dda82a81d6d8
+	//var u=web3.eth.getBalance(i);
+
+	var e=v/1000000000000000000;
+var j=(e.toFixed(6));
+var i = web3.eth.iban.fromAddress('0xFed55B453dBb0589ec5433a9318C09f1766D7dAb');
+
+var z = new web3.eth.iban(i);
+var address = i.address();
+//console.log(address); 
+//console.log(i.toString());
+/*
+ var z2 = new web3.eth.iban("XE83ETHWAFACASHBELLAJJJU9D51Y2I4XPN");//XE83ETHWAFACASHBELLAJ+JJU9D51Y2I4XPN first par is iban using creatindirect+ 14 caraters
+var address2 = z2.address();
+console.log("address of XE...."+address2); 
+console.log("iban"+z2.toString()); */
+//iban in ethereum is not a transalation of banks existing ibans but a standard to adopt in case ethereum joins ban system
+//how to creat icap //iban addresses https://gavofyork.gitbooks.io/turboethereum/content/ethkey.html
+//BBAN is short for Basic Bank Account Number. It represents a country-specific bank account number. The BBAN is the last part of the IBAN when used for international funds transfers.
+console.log("*********************************");
+
+
+ var i = web3.eth.iban.createIndirect({
+  institution: "WAFACASH",
+  identifier: "BELLAJ"
+});
+console.log(i.toString());//gives bban          XE83ETHWAFACASHBELLAJ
+
+var ie = web3.eth.iban.fromBban(i);//gives iban XE93XE83ETHWAFACASHBELLAJ
+console.log(ie.toString()); 
+
+ var zr2 = new web3.eth.iban(ie); 
+ console.log(zr2.toString());//
+
+var addressr2 = zr2.address();
+console.log("address from iban"+addressr2);//
+console.log("*********************************");
+
+/*
+var r = new web3.eth.iban("XE81ETHXREGGAVOFYORK");
+var add2=r.address();*/
+//var txHash = web3.eth.sendIBANTransaction('0xFed55B453dBb0589ec5433a9318C09f1766D7dAb', i.toString(), 0x100);
+/*
+XE The country code for Ethereum;
+66 The checksum;
+ETH The asset identifier within the client account - in this case, "ETH" is the only valid asset identifier, since Ethereum's base registry contract supports only this asset;
+XREG The institution code for the account - in this case, Ethereum's base registry contract;
+GAVOFYORK The client identifier within the institution - in this case, a direct payment with no additional data to whatever primary address is associated with the name "GAVOFYORK" in Ethereum's base registry contract;
+*/
+	</script >          
+                              <span class="clear">
+                                <span class="h3 block m-t-xs text-danger"> <script type="text/javascript">  document.write(j);	</script ></span>
+                                <span class="h3 block m-t-xs text-danger"> <script type="text/javascript"> /* document.write(u)*/	</script ></span>
+                                <span class="h3 block m-t-xs text-danger"> <script type="text/javascript">  document.write(i);	</script ></span>
+                                <span class="h3 block m-t-xs text-danger"> <script type="text/javascript">  document.write(address);	</script ></span>
+                                <span class="h3 block m-t-xs text-danger"> <script type="text/javascript"> // document.write(r);	</script ></span>
+                                <span class="h3 block m-t-xs text-danger"> <script type="text/javascript">  //document.write("adda"+add2);	</script ></span>
+                                <span class="h3 block m-t-xs text-danger"> <script type="text/javascript">  //document.write("adda"+txHash);	</script ></span>
+							 
+
+                                <small class="text-muted text-u-c">WafaCashCoin
+</small>
+                              </span>
+                       
+                   
+          
+                        </div>
+                      </div>
+        
+                       </section>
+              </section>
+            </section>
+            <!-- side content -->
+         
+            <!-- / side content -->
+          
+      </section>
+    </section>
+  </section>
+  <script src="js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>  
+  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+  <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.tooltip.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.spline.js"></script>
+  <script src="js/charts/flot/jquery.flot.pie.min.js"></script>
+  <script src="js/charts/flot/jquery.flot.resize.js"></script>
+  <script src="js/charts/flot/jquery.flot.grow.js"></script>
+  <script src="js/charts/flot/demo.js"></script>
+
+  <script src="js/calendar/bootstrap_calendar.js"></script>
+  <script src="js/calendar/demo.js"></script>
+
+  <script src="js/sortable/jquery.sortable.js"></script>
+  <script src="js/app.plugin.js"></script>
+</body>
+</html>

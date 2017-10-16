@@ -1,0 +1,12 @@
+ 
+     <script type="text/javascript" src="./Web3/web3.js"></script>	</head>
+
+<script type="text/javascript">
+var web3 = new Web3();
+ //  web3 = new Web3(new Web3.providers.HttpProvider("http://rpc.ethapi.org:8545"));
+web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v2QCDR7v7cgH6fy0y171"));
+
+   // web3.setProvider(new web3.providers.HttpProvider('http://api.myetherapi.com/rop'));
+    var v=web3.eth.getBalance("0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8").toString();
+	console.log(v);
+	</script >

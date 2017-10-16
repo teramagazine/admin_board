@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <meta charset="utf-8" />
+  <title>Scale | Web Application</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/icon.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />  
+    <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+<body class="">
+  <section class="vbox">
+    <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
+      <div class="navbar-header aside-md dk">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="index.html" class="navbar-brand">
+          <img src="images/logo.png" class="m-r-sm" alt="scale">
+          <span class="hidden-nav-xs"></span>
+        </a>
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+          <i class="fa fa-cog"></i>
+        </a>
+      </div>
+      <ul class="nav navbar-nav hidden-xs">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="i i-grid"></i>
+          </a>
+          <section class="dropdown-menu aside-lg bg-white on animated fadeInLeft">
+            <div class="row m-l-none m-r-none m-t m-b text-center">
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-mail i-2x text-primary-lt"></i>
+                    </span>
+                    <small class="text-muted">Mailbox</small>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-calendar i-2x text-danger-lt"></i>
+                    </span>
+                    <small class="text-muted">Calendar</small>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-map i-2x text-success-lt"></i>
+                    </span>
+                    <small class="text-muted">Map</small>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-paperplane i-2x text-info-lt"></i>
+                    </span>
+                    <small class="text-muted">Trainning</small>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-images i-2x text-muted"></i>
+                    </span>
+                    <small class="text-muted">Photos</small>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="padder-v">
+                  <a href="#">
+                    <span class="m-b-xs block">
+                      <i class="i i-clock i-2x text-warning-lter"></i>
+                    </span>
+                    <small class="text-muted">Timeline</small>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-sm bg-white b-white btn-icon"><i class="fa fa-search"></i></button>
+            </span>
+            <input type="text" class="form-control input-sm no-border" placeholder="Search apps, projects...">            
+          </div>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
+        <li class="hidden-xs">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="i i-chat3"></i>
+            <span class="badge badge-sm up bg-danger count">2</span>
+          </a>
+          <section class="dropdown-menu aside-xl animated flipInY">
+            <section class="panel bg-white">
+              <div class="panel-heading b-light bg-light">
+                <strong>You have <span class="count">2</span> notifications</strong>
+              </div>
+              <div class="list-group list-group-alt">
+                <a href="#" class="media list-group-item">
+                  <span class="pull-left thumb-sm">
+                    <img src="images/a0.png" alt="..." class="img-circle">
+                  </span>
+                  <span class="media-body block m-b-none">
+                    Use awesome animate.css<br>
+                    <small class="text-muted">10 minutes ago</small>
+                  </span>
+                </a>
+                <a href="#" class="media list-group-item">
+                  <span class="media-body block m-b-none">
+                    1.0 initial released<br>
+                    <small class="text-muted">1 hour ago</small>
+                  </span>
+                </a>
+              </div>
+              <div class="panel-footer text-sm">
+                <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+              </div>
+            </section>
+          </section>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="thumb-sm avatar pull-left">
+              <img src="images/a0.png" alt="...">
+            </span>
+            Ahmed.Kamali <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight">            
+            <li>
+              <span class="arrow top"></span>
+              <a href="#">Settings</a>
+            </li>
+            <li>
+              <a href="profile.html">Profile</a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="badge bg-danger pull-right">3</span>
+                Notifications
+              </a>
+            </li>
+            <li>
+              <a href="docs.html">Help</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>      
+    </header>
+    <section>
+      <section class="hbox stretch">
+            <!-- .aside -->
+		   <script src="./js/w3.js"></script>
+<aside class="bg-black aside-md hidden-print" id="nav">          
+<section class="vbox">
+<aside w3-include-html="included_side.html">
+<script>
+w3.includeHTML();
+</script>
+</section>
+</aside>
+	  <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable padder">
+              <div class="m-b-md">
+                <h3 class="m-b-none">International bank transfer deposits</h3>
+              </div>
+               <div class="row">
+                    <div class="col-sm-6">
+                  <form >
+                    <section class="panel panel-default">
+                      <header class="panel-heading">
+                        <ul class="nav nav-tabs pull-right">
+                          <li><a href="#tabb1" data-toggle="tab">Deposit Ethers</a></li>
+                          <li><a href="#tabb2" data-toggle="tab">Instructions</a></li>
+                        </ul>
+                        <span class="font-bold">Please send the Ethers to the address bellow</span>
+                      </header>
+                      <div class="panel-body">
+                        <div class="tab-content">
+                           
+						   
+						     <div class="tab-pane text-center" id="tabb1">
+						      <div class="r b bg-warning-ltest wrapper m-b">
+                            Ethereum address : 0xFed55B453dBb0589ec5433a9318C09f1766D7dAb
+                          </div>
+				 
+		<div style="    margin-left: 25%;">
+			<img style="width:40%;" id="addrqr" src="https://chart.googleapis.com/chart?chs=230x230&amp;chld=M%7C0&amp;cht=qr&amp;chl=0xFed55B453dBb0589ec5433a9318C09f1766D7dAb" alt="3GgXoBFQbbVKtW1ejBpZZMMw8a1VtQmkpA">
+		
+		</div>
+		</div>
+		<div class="tab-pane " id="tabb2">
+                            <h2 >Instructions</h2>
+    <p>Green BTC addresses are segwit addresses and are fully backward compatible with legacy addresses.</p>
+	<h3>Important notice</h3>
+	<p>It may take up to 1 hour for the bitcoin network to confirm the transaction. Please note that 3 network confirmations are required. Bitstamp also supports BitGo's Instant deposit. BTC transfers via BitGo Instant feature to Bitstamp will be done with 0 network confirmations. You can request a new deposit address every 24 hours.</p>                          </div> 
+					     <div class="tab-pane text-center" id="tabb2">	  
+						</div>   
+						   
+						   
+                        </div>
+                      </div>
+                      <footer class="panel-footer text-right bg-light lter">
+                        <ul class="pager wizard m-n">
+                          <li class="previous"><a href="#">Try again</a></li>
+                          <li class="next"><a href="#">Create Transaction</a></li>
+                        </ul>
+                      </footer>
+                    </section>
+                  </form>
+                </div>
+                <div class="col-sm-6">
+                  <form  >
+                    <section class="panel panel-default">
+                      <header class="panel-heading">
+                        <ul class="nav nav-tabs pull-right">
+                          <li><a href="#tab1" data-toggle="tab">Deposit Bitcoins</a></li>
+                          <li><a href="#tab2" data-toggle="tab">Instructions</a></li>
+                        </ul>
+                        <span class="font-bold">Please send the Bitcoins to the address bellow</span>
+                      </header>
+                      <div class="panel-body">
+                        <div class="tab-content">
+                             <div class="tab-pane text-center" id="tab1">
+						   
+						   <div class="r b bg-warning-ltest wrapper m-b">
+                            Bitcoin address : 3GgXoBFQbbVKtW1ejBpZZMMw8a1VtQmkpA
+                          </div>
+				 
+		<div style="    margin-left: 25%;">
+			<img style="width:40%;" id="addrqr" src="https://chart.googleapis.com/chart?chs=230x230&amp;chld=M%7C0&amp;cht=qr&amp;chl=bitcoin:3GgXoBFQbbVKtW1ejBpZZMMw8a1VtQmkpA" alt="3GgXoBFQbbVKtW1ejBpZZMMw8a1VtQmkpA">
+		
+		</div>
+						   
+						   
+						   
+                        </div>      <div class="tab-pane " id="tab2">
+                            <h2 >Instructions</h2>
+    <p>Green BTC addresses are segwit addresses and are fully backward compatible with legacy addresses.</p>
+	<h3>Important notice</h3>
+	<p>It may take up to 1 hour for the bitcoin network to confirm the transaction. Please note that 3 network confirmations are required. Bitstamp also supports BitGo's Instant deposit. BTC transfers via BitGo Instant feature to Bitstamp will be done with 0 network confirmations. You can request a new deposit address every 24 hours.</p>                          </div> </div>
+                      </div>
+                      <footer class="panel-footer text-right bg-light lter">
+                        <ul class="pager wizard m-n">
+                          <li class="previous"><a href="#">Try again</a></li>
+                          <li class="next"><a href="#">Create Transaction</a></li>
+                        </ul>
+                      </footer>
+                    </section>
+                  </form>
+                </div>
+				
+						
+			  <div class="col-sm-12">
+                  <section class="panel panel-default">
+                    <header class="panel-heading">
+                      <span class="label bg-danger pull-right m-t-xs">4 tx sent</span>
+                      CryptoCurrency Transactions
+                    </header>
+                    <table class="table table-striped m-b-none">
+                      <thead>
+                        <tr>
+                          <th>Progress</th>
+                          <th>Amount</th>                    
+                          <th width="70"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>                    
+                          <td>
+                            <div class="progress progress-sm progress-striped active m-t-xs m-b-none">
+                              <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                            </div>
+                          </td>
+                          <td>50 Ethers</td>
+                          <td class="text-right">
+                            <div class="btn-group">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil"></i></a>
+                              <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>                    
+                          <td>
+                            <div class="progress progress-xs m-t-xs m-b-none">
+                              <div class="progress-bar bg-info" data-toggle="tooltip" data-original-title="40%" style="width: 40%"></div>
+                            </div>
+                          </td>
+                          <td>3 Bitcoins</td>
+                          <td class="text-right">
+                            <div class="btn-group">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil"></i></a>
+                              <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>                    
+                          <td>
+                            <div class="progress progress-xs m-t-xs m-b-none">
+                              <div class="progress-bar bg-warning" data-toggle="tooltip" data-original-title="20%" style="width: 20%"></div>
+                            </div>
+                          </td>
+                          <td>1 Bitcoin</td>
+                          <td class="text-right">
+                            <div class="btn-group">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil"></i></a>
+                              <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>                    
+                          <td>
+                            <div class="progress progress-xs m-t-xs m-b-none">
+                              <div class="progress-bar bg-danger" data-toggle="tooltip" data-original-title="15%" style="width: 15%"></div>
+                            </div>
+                          </td>
+                          <td>32 Ethers</td>
+                          <td class="text-right">
+                            <div class="btn-group">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil"></i></a>
+                              <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </section>
+                </div>
+               
+				
+              </div> 
+                      
+            </section>
+	
+            </section>
+			
+			
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+        </section>
+      </section>
+    </section>
+  </section>
+  <script src="js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>  
+  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="js/parsley/parsley.min.js"></script>
+<script src="js/wizard/jquery.bootstrap.wizard.js"></script>
+<script src="js/wizard/demo.js"></script>
+  <script src="js/app.plugin.js"></script>
+</body>
+</html>
