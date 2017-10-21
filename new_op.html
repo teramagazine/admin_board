@@ -2,7 +2,7 @@
 <html lang="en" class="app">
 <head>  
   <meta charset="utf-8" />
-  <title>Scale | Web Application</title>
+  <title>Wcash | Web Application</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
@@ -11,13 +11,15 @@
   <link rel="stylesheet" href="css/icon.css" type="text/css" />
   <link rel="stylesheet" href="css/font.css" type="text/css" />
   <link rel="stylesheet" href="css/app.css" type="text/css" />  
+  <script src="Web3/web3.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/ie/html5shiv.js"></script>
     <script src="js/ie/respond.min.js"></script>
     <script src="js/ie/excanvas.js"></script>
   <![endif]-->
 </head>
-<body class="">
+<body class="">  		<script src="js/b2b.js"></script>
+
   <section class="vbox">
     <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
       <div class="navbar-header aside-md dk">
@@ -215,7 +217,7 @@ w3.includeHTML();
                       <div class="panel-body">
                         <p> Start new business smart contract. You have choice between pre-defined templates or <a href="wallet_management.html#contracts">build you own. All the parties should be registred in Wafacash System otherwise, please send an invitation to the other counterparties.</a></p>
                         <div class="line line-lg"></div>
-                        <h4>New Process</h4>
+                        <h4>The contract is ready to initiate</h4>
                         <div class="progress progress-xs m-t-md">
                           <div class="progress-bar bg-success"></div>
                         </div>
@@ -223,8 +225,8 @@ w3.includeHTML();
 						
 	       <div class="tab-pane" id="step1">   
 					  <div class="form-group">
-                          <label class="col-lg-2 control-label">Counterparty account ID</label>
-                              <input type="text" class="form-control" data-trigger="change" data-required="true"  placeholder="Account ID">
+                          <label class="col-lg-2 control-label" >Counterparty account ID</label>
+                              <input type="text" class="form-control" data-trigger="change" data-required="true"  placeholder="Account ID" id="address_counterparty">
 
 	                  </div>
  <br>
@@ -238,8 +240,7 @@ w3.includeHTML();
 	                    <ul class="dropdown-menu dropdown-select">
 	                        <li class="active"><a href="#"><input type="radio" name="d-s-r" checked="">Escrow</a></li>
 	                        <li><a href="#"><input type="radio" name="d-s-r">B2B Payment</a></li>
-	                        <li><a href="#"><input type="radio" name="d-s-r">XXXXX</a></li>
- 	                    </ul>
+  	                    </ul>
 	                  </div>
 	                  </div><br>
  
@@ -267,7 +268,7 @@ w3.includeHTML();
                                              
      
                             <p class="m-t">Amount:</p>
-                            <input type="text" class="form-control" data-trigger="change" data-required="true"><!-- data-type="email" placeholder="email address"> -->
+                            <input type="text" class="form-control" data-trigger="change" data-required="true" id="contract_amnt"><!-- data-type="email" placeholder="email address"> -->
 						
                           </div>
                           <div class="tab-pane" id="step2">
@@ -287,12 +288,16 @@ w3.includeHTML();
 						  
 						  
 						  
-                          <div class="tab-pane" id="step3">This is step 3</div>
+                          <div class="tab-pane" id="step3"><br>
+						  <button  id="deploy_button" onClick='initiate_b(document.getElementById("address_counterparty").value,document.getElementById("contract_amnt").value);'>Initiate contract</button>
+
+						  </div>
                           <ul class="pager wizard m-b-sm">
                             <li class="previous first" style="display:none;"><a href="#">First</a></li>
                             <li class="previous"><a href="#">Previous</a></li>
                             <li class="next last" style="display:none;"><a href="#">Last</a></li>
                             <li class="next"><a href="#">Next</a></li>
+							<div id="results"></div>
                           </ul>
                         </div>
                       </div>

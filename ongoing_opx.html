@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
   <link rel="stylesheet" href="css/animate.css" type="text/css" />
   <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-  <!--link rel="stylesheet" href="css/icon.css" type="text/css" /-->
+  <link rel="stylesheet" href="css/icon.css" type="text/css" />
   <link rel="stylesheet" href="css/font.css" type="text/css" />
   <link rel="stylesheet" href="css/app.css" type="text/css" />  
     <!--[if lt IE 9]>
@@ -299,8 +299,6 @@ w3.includeHTML();
                                <div class="m-t-sm timeline-action">
                                 <button class="btn btn-sm btn-default btn-bg" id="payment_button" onclick="pay_seller()"><i class="fa fa-check" ></i> Payer</button>
                                 <button class="btn btn-sm btn-default btn-bg" id="fond_button" onclick="unlock_funds_()"><i class="fa fa-check"></i> Débloquer Fonds</button>
-                                <button class="btn btn-sm btn-default btn-bg" id="approver_button" onclick="approver_()"><i class="fa fa-check"></i> Approver contrat</button>
-                                <button class="btn btn-sm btn-default btn-bg" id="refuser_button" onclick="refuser_()"><i class="fa fa-check"></i> refuser contrat</button>
                               </div>
                             </div>
                           </div>
@@ -402,7 +400,7 @@ w3.includeHTML();
 <script type="text/javascript">
 
  var approved_by_seller=false;
- var terminate=false;
+ 
   function unlock_funds_(){
         
 project_contract.unlock_funds(function(error, result){
@@ -442,12 +440,11 @@ if (answer) {
 var transactionObject = {from: web3.eth.accounts[0],  gas: 3000000 };
 
 project_contract.pay_duty(transactionObject,function(error, result){
-//$('#testdiv3').show();  
+//$('#testdiv3').show();   
    if(!error)
     {$('#testdiv4').show();
 	document.getElementById("pay_seller").innerHTML="Transaction ID :"+result;
-	terminate=true; 
-
+	
 	}else
     document.getElementById("pay_seller").innerHTML=error;
 });
@@ -469,80 +466,11 @@ else {
 }
 }
  
- /**********************check if display will be for buyer or seller ********/  
-    var account_type="user";//buyer or seller
-
-  	project_contract.seller(function(error, result){
-    if(!error){
-if(web3.eth.accounts[0]==result)
-{console.log("you are seller");account_type="seller";
-$('#fond_button').hide();$('#payment_button').hide();
-	document.getElementById("approver_button").disabled = true; 
-	document.getElementById("refuser_button").disabled = true; 
-
-}
-}
-    else
-console.log(error);
-	});  
-	
-	project_contract.buyer(function(error, result){
-    if(!error){
-if(web3.eth.accounts[0]==result)
-{console.log("you are buyer");
-$('#approver_button').hide();$('#refuser_button').hide();}
-}
-    else
-console.log(error);
-	});
-
- /***************************function for seller accept or reject ************/
  
-function approver_()
-{
-	 var answer = confirm("êtes vous sur de bien vouloir approuver ce contrat")
-if (answer) {
-var transactionObject = {from: web3.eth.accounts[0],  gas: 3000000 };
-
-	  project_contract.approve(transactionObject,function(error, result){
-//$('#testdiv3').show();   
-   if(!error)
-    document.getElementById("tx_result").innerHTML=result;
-	else
-    document.getElementById("tx_result").innerHTML=result;
-});
-}
-else {
-    //some code
-}
-}
-function refuser_()
-{
-	 	 var answer = confirm("êtes vous sur de refuser ce contrat")
-if (answer) {
-var transactionObject = {from: web3.eth.accounts[0], gas: 3000000 };
-
-	  project_contract.reject(transactionObject,function(error, result){
-//$('#testdiv3').show();   
-   if(!error)
-    document.getElementById("tx_result").innerHTML=result;
-	else
-    document.getElementById("tx_result").innerHTML=result;
-});
-}
-else {
-    //some code
-}
-}
-
-
-
- /************************
- after click
- ****************************/
 
 $(function() {
   list_operations();
+  
  
   project_contract.createdTimestamp(function(error, result){
     if(!error){
@@ -555,14 +483,11 @@ $(function() {
 
 	});
   
-
-
 /*********first check if you have an existing contract by checking if there is counterparty*****/
 	project_contract.seller(function(error, result){
     if(!error){
 	if(result=="0x0000000000000000000000000000000000000000")
-{$('#section_main').hide();$('#nothing').show();
-}
+{$('#section_main').hide();$('#nothing').show();}
 else
 $('#nothing').hide();
 console.log(result);
@@ -571,7 +496,7 @@ console.log(result);
 console.log(error);
 	});
 
-/*******************************************************/
+
 var finish=false;
 document.getElementById("payment_button").disabled = true; 
 document.getElementById("fond_button").disabled = true; 
@@ -591,92 +516,9 @@ $('#testdiv0').hide();
  $('#testdiv0').show();
  //$('#section_main').hide();
  
- /********get all notices for seller********/
- console.log(account_type);
- if(account_type=="seller"){
-project_contract.get_notice(function(error, result){
-    if(!error)
-   { $('#testdiv0').show();
-   //v=result;
-$('#testdiv').show(); 
-
-
-				  project_contract.approvalTimestamp(function(error, result){
-					if(!error){
-						var date = new Date(result*1000);
-					document.getElementById("timestempapprov").innerHTML=date.toISOString();
-					}
-
-					else
-					document.getElementById("timestempapprov").innerHTML="Timestamp :"+error;
-
-					});
-
  
-  if (result=="operation in progress")
-{
-//$('#aside').show();
-$('#fond_button').show();
-$('#refuser_button').hide();
-$('#approver_button').hide();
-document.getElementById("status_res").innerHTML= "vous avez approuvez le contrat" ;
-document.getElementById("payment_notification").innerHTML= "Contrat approuvé." ;
-	document.getElementById("approver_button").disabled = false; 
-	document.getElementById("refuser_button").disabled = false;
-
-
-approved_by_seller=true;
- }
-   if (result=="rejected")
- document.getElementById("status_res").innerHTML= "Contrat rejeté." ;
- 
-   if (result=="en attente d'acceptation")   
-  {
-	document.getElementById("approver_button").disabled = false; 
-	document.getElementById("refuser_button").disabled = false; 
-	document.getElementById("status_res").innerHTML= "En attente d'approval du contrat" ;
-   document.getElementById("timestempapprov").innerHTML="en cours";
-   
-   }
-   if (result=="payment unlocked")   
-   {    
-
-$('#testdiv4').show();
-approved_by_seller=true;
-
-	document.getElementById("approver_button").disabled = false; 
-	document.getElementById("refuser_button").disabled = false;
-	
-document.getElementById("pay_seller").innerHTML= "Payment réussi" ;
-document.getElementById("status_res").innerHTML= "Contrat approuvé par le vendeur." ;
-document.getElementById("payment_notification").innerHTML= "Payment réussi." ;//payment bar notification 
-  
-terminate=true;
-	$('#fond_button').hide();
-					project_contract.paymentTimestamp(function(error, result){
-						if(!error){
-							var date = new Date(result*1000);
-						document.getElementById("timestemppayment").innerHTML=date.toISOString();
-						document.getElementById("payment_notification_timestamp").innerHTML=date.toISOString();
-						}
-
-						else
-						document.getElementById("timestemppayment").innerHTML="Timestamp :"+error;
-
-						});
-   }
-} 
-	else
-    console.log("error : "+error);
-});
-}
-
- 
- else
- /********get all notices for buyer********/
- 	{
-	console.log("buyer notices");
-project_contract.get_notice(function(error, result){
+ 	
+		project_contract.get_notice(function(error, result){
     if(!error)
    { $('#testdiv0').show();
    //v=result;
@@ -714,14 +556,12 @@ approved_by_seller=true;
    }
    if (result=="payment unlocked")   
    {    $('#testdiv4').show();
-   
    approved_by_seller=true;
-  terminate=true;
 
 document.getElementById("pay_seller").innerHTML= "Payment réussi" ;
 document.getElementById("status_res").innerHTML= "Contrat approuvé par le vendeur." ;
 document.getElementById("payment_notification").innerHTML= "Payment réussi." ;//payment bar notification 
-
+  
 	$('#payment_button').hide();
 	$('#fond_button').hide();
 					project_contract.paymentTimestamp(function(error, result){
@@ -741,11 +581,9 @@ document.getElementById("payment_notification").innerHTML= "Payment réussi." ;/
     console.log("error : "+error);
 });
 
-}
+
 /********returns how many tokens are held by the contract ********/
   project_contract.get_locked_funds(function(error, result){
-  	console.log("terminate buyer"+terminate);
-
     if(!error)
     {var blocked_funds=web3.fromWei(result, 'Szabo'); 
 		
@@ -769,10 +607,10 @@ if (blocked_funds!=0)
 					});
 
 	}
-	else if(approved_by_seller&&terminate)
+	else if(approved_by_seller)
 		 {
 	
-		 document.getElementById("blocked_funds_div").innerHTML="Tokens en custody";
+		 document.getElementById("blocked_funds_div").innerHTML="0 tokens en custody";
 		 $('#testdiv2').show();
 		 
 		 

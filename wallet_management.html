@@ -3,31 +3,21 @@
 <head>
 <meta charset="utf-8">
 <title>WafaCASH.com</title>
-<meta name="description" content="cash.com wallet.">
+<meta name="description" content="wcash.com wallet.">
  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script type="text/javascript" src="js/etherwallet-static.min.js"></script>
-<script type="text/javascript" src="js/etherwallet-master.js"></script>
+
 <script src="./js/w3.js"></script>
 
 <!--script src="js/angular-sanitize.min.js"></script>
 <script src="js/angular-animate.min.js"></script-->
 
-<link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
-<link rel="manifest" href="images/fav/manifest.json">
-<link rel="mask-icon" href="images/fav/safari-pinned-tab.svg" color="#2f99b0">
-<link rel="shortcut icon" href="images/fav/favicon.ico">
-  <meta name="msapplication-config" content="images/fav/browserconfig.xml">
+ 
+ 
 <meta name="theme-color" content="#1d6986">
- <meta property="og:image" content="/images/myetherwallet-logo-banner.png" />
-<meta property="og:image" content="/images/myetherwallet-logo.png" />
-<meta property="og:image" content="/images/myetherwallet-logo-square.png" />
-<meta property="og:image" content="/images/myetherwallet-banner-fun.jpg" />
+ 
  <script type='application/ld+json'> </script>
-  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+ 
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
   <link rel="stylesheet" href="css/etherwallet-master.min.css">
   <link rel="stylesheet" href="css/animate.css" type="text/css" />
@@ -35,28 +25,39 @@
   <link rel="stylesheet" href="css/icon.css" type="text/css" />
   <link rel="stylesheet" href="css/font.css" type="text/css" />
   <link rel="stylesheet" href="css/app.css" type="text/css" />  
-  
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <!--script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
   <script src="bower_components/angular-translate/angular-translate.min.js"></script>
   <script src="bower_components/angular-animate/angular-animate.min.js"></script-->
   <!-- this page is integration of the myetherwallet and just a link to ~#send money is in the side menu for send tx so no page for send money-->
 </head>
 <body>
- <script>
+<script type="text/javascript">
 //trick to resolve the displa problem it reffresh the page after x sec
- var time = new Date().getTime();
-     $(document.body).bind("mousemove keypress", function(e) {
-         time = new Date().getTime();
-     });
-
+/* var time = new Date().getTime();   
+var brk=0;
+ time = new Date().getTime();
+*/
+    /*$(document.body).bind("mousemove keypress", function(e) {
+	brk=1;
+     });*/
+/*	 $(document.body).mousedown(function(event) {
+    if (event.which==1) {
+            alert('Left Mouse button pressed.');
+             
+    }
+});
+ 
      function refresh() {
          if(new Date().getTime() - time >= 500) 
-             window.location.reload(true);
+             {window.location.reload(true);brk++}
          else 
-             setTimeout(refresh, 500);
+              setTimeout(refresh, 500);
      }
-
-     setTimeout(refresh, 500);
+*/
+     //if (brk==0)setTimeout(refresh, 500);
+	 
+ 
 </script>
 <header class="{{curNode.name}} {{curNode.service}} {{curNode.service}} nav-index-{{gService.currentTab}}" aria-label="header" ng-controller='tabsCtrl' >
 
@@ -2093,6 +2094,8 @@ w3.includeHTML();
  
  </main>
 </body>
+<script type="text/javascript" src="js/etherwallet-static.min.js"></script>
+<script type="text/javascript" src="js/etherwallet-master.js"></script>
 </html>
 
-</section>
+ 
